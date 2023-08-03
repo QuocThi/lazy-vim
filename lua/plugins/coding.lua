@@ -1,3 +1,4 @@
+-- Thanks to Mr.BacBia3696
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -51,13 +52,6 @@ return {
       opts.mapping = {
         ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c", "s" }),
         ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c", "s" }),
-        -- ["<C-n>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_next_item()
-        --   elseif not cmp.complete() then
-        --     fallback()
-        --   end
-        -- end, { "i", "s", "c" }),
         ["<C-g>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
