@@ -23,6 +23,8 @@ return {
     keys = {
       { "<leader>cs", "<cmd>AerialToggle<cr>", desc = "AerialToggle" },
       { "<leader>cS", "<cmd>AerialNavToggle<cr>", desc = "AerialToggle" },
+      { ";", "<C-o>", desc = "LastBuffer" },
+      { "'", "<C-i>", desc = "NextBuffer" },
     },
     init = function()
       require("telescope").load_extension("aerial")
@@ -401,7 +403,7 @@ return {
           },
           settings = {
             gopls = {
-              gofumpt = true,
+              -- gofumpt = true,
               codelenses = {
                 gc_details = false,
                 generate = true,

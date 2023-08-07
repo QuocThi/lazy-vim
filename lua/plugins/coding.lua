@@ -49,18 +49,6 @@ return {
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
       })
-      opts.mapping = {
-        ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c", "s" }),
-        ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c", "s" }),
-        ["<C-g>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<C-y>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ["<S-CR>"] = cmp.mapping.confirm({
-          select = false,
-        }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-      }
     end,
   },
 }
