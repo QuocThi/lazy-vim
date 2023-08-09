@@ -51,7 +51,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin" ,
+      colorscheme = "tokyonight-moon" ,
     },
   },
 
@@ -181,5 +181,22 @@ return {
     keys = function()
       return {}
     end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      open_files_do_not_replace_types = { "terminal", "trouble", "qf", "aerial" }, -- when opening files, do not use windows containing these filetypes or buftypes
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols",
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true, -- when true,  the hidden files will be showed
+        },
+      },
+    },
   },
 }

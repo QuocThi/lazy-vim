@@ -5,3 +5,5 @@ vim.o.relativenumber = false
 --If true, lines longer than the width of the window will wrap and
 --displaying continues on the next line.
 vim.o.wrap = true
+--Increase tab indent
+-- vim.o.tabstop = 4
