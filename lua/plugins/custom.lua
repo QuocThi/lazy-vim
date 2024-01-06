@@ -85,6 +85,7 @@ return {
         desc = "Find Plugin File",
       },
     },
+
     -- change some options
     opts = {
       defaults = {

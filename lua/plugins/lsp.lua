@@ -403,7 +403,9 @@ return {
           },
           settings = {
             gopls = {
-              -- gofumpt = true,
+              -- gopls docs: https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+              -- https://github.com/golang/tools/blob/6290d8a967be4ebd02218f5c53858de30b9107f3/gopls/internal/lsp/source/options.go#L364
+              gofumpt = true,
               codelenses = {
                 gc_details = false,
                 generate = true,
@@ -430,7 +432,8 @@ return {
                 unusedwrite = true,
                 useany = true,
               },
-              usePlaceholders = true,
+              -- Disable placeholders for function parameters or struct fields in completion responses.
+              usePlaceholders = false,
               completeUnimported = true,
               staticcheck = true,
               directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
@@ -443,7 +446,7 @@ return {
         gopls = function(_, opts)
           -- workaround for gopls not supporting semanticTokensProvider
           -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
-          require("lazyvim.util").on_attach(function(client, _)
+          require("lazyvim.util").lsp.on_attach(function(client, _)
             if client.name == "gopls" then
               if not client.server_capabilities.semanticTokensProvider then
                 local semantic = client.config.capabilities.textDocument.semanticTokens
